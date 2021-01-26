@@ -5,6 +5,9 @@ class BaseContact:
         self.phone = phone
         self.email = email
 
+    def contact(self):
+        print(f"Wybieram numer +48 {self.phone} i dzwonię do {self.name} {self.last_name}")
+
 
 class BusinessContact(BaseContact):
     def __init__(self, position, company_name, business_phone, *args, **kwargs):
@@ -12,3 +15,6 @@ class BusinessContact(BaseContact):
         self.position = position
         self.company_name = company_name
         self.business_phone = business_phone
+
+    def contact(self):
+        print(f"Wybieram numer +48 {self.business_phone} i dzwonię do {self.name} {self.last_name}")
