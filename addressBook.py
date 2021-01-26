@@ -1,4 +1,10 @@
 class BaseContact:
+    @property
+    def label_length(self):
+        print(self.name)
+        print(self.last_name)
+        return len(f"{self.name} {self.last_name}")
+
     def __init__(self, name, last_name, phone, email):
         self.name = name
         self.last_name = last_name
