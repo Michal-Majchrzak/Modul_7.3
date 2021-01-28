@@ -1,4 +1,5 @@
 from faker import Faker
+from random import randint
 
 
 class BaseContact:
@@ -54,3 +55,13 @@ def create_contacts(is_business_type=False, number_of_contacts=1):
 
     del faker_obj
     return contacts
+
+
+if __name__ == "__main__":
+    cards_collection = create_contacts(False, randint(1, 30))
+    cards_collection += create_contacts(True, randint(1, 20))
+
+    print("Wizytówki:")
+    for card in cards_collection:
+        card.contact()
+        print(f"Ilość znaków na etykietę : {card.label_length}")
